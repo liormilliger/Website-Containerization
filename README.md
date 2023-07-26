@@ -22,15 +22,20 @@ This project uses AWS EC2 instance on which we will run our Docker containe
 *  Copy paste userdata file content
 *  Launch instance
 > In the user data we are using 2 packages: apt-get and apt.
+> 
 > First we update them and then we install the packages and dependencies.
+>
 > The last command makes ubuntu user part of docker group
+>
 > for authorizing operations from ubuntu user on docker
 
 
 ## STEP 2 - CREATING ARTIFACT FOR DOCKER IMAGE
 
 > In this step we will download a zip file of the website, open and archive it as a tar.gz
+> 
 > and move it to our working directory (zip file will not be extracted in the build process,
+>
 > it has to be a different archive file - we will use tar).
 
 
@@ -43,6 +48,7 @@ This project uses AWS EC2 instance on which we will run our Docker containe
 * Open your terminal and SSH to your Docker-Engine EC2 via its public IP
 * (SSH -i <path/to/key.pem> ubuntu@<Public IP>)
 > We will open a working directory, get the file (wget) through the link,
+>
 > open it, archive it with tar and clean up:
 
 #### Follow these commands
@@ -62,10 +68,15 @@ This project uses AWS EC2 instance on which we will run our Docker containe
 
 ## STEP 3 - Create an image and run a container
 > In this step we will create a Dockerfile using our artifact
+>
 > to create an image from which we will run our container
+>
 > and the container will carry our website
+>
 > There are some good documentation regarding how to build a Docker file:
+>
 > https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+>
 > https://docs.docker.com/engine/reference/builder/
 
 #### Creating Dockerfile (Copy-Paste the content of Dockerfile in here)
@@ -81,7 +92,9 @@ This project uses AWS EC2 instance on which we will run our Docker containe
 
 ## STEP 4 - VALIDATION
 > go to the browser and in the url line put the public IP of the Docker-Engine Ec2 instance
+>
 > and the port like this: <public IP>:9080
+>
 > The website should upload.
 ## We containerized our website!
 
