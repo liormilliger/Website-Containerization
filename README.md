@@ -80,6 +80,8 @@ This project uses AWS EC2 instance on which we will run our Docker containe
 > https://docs.docker.com/engine/reference/builder/
 
 #### Creating Dockerfile (Copy-Paste the content of Dockerfile in here)
+#### MAKE SURE to change the Dockerfile to fit your choices:
+#### Most important (line 11) ADD should have YOUR artifact name
 * vim Dockerfile
 * paste content
 * :wq → save and exit
